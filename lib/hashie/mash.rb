@@ -286,7 +286,7 @@ module Hashie
         duping ? val.dup : val
       when ::Hash
         val = val.dup if duping
-        self.class.new(val)
+        Hashie::Mash.new(val)
       when Array
         val.map { |e| convert_value(e) }
       when ::Array
